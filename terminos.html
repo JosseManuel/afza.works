@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=TU_CLAVE_API&callback=initMap" async defer></script>
+    <script src="script.js"></script> 
+    <title>Inicio</title>
+</head>
+<style>
+    body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('background-pattern.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+}
+
+
+
+.logo-container img {
+    max-width: 150px; 
+    height: auto;
+}
+
+header {
+    background: #000000; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    margin: auto 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 15px; 
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #40c1dd;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #000000;
+    color: #fff;
+    text-align: left;
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.footer-column {
+    margin-bottom: 20px;
+}
+
+.footer-column h3,
+.footer-column h4 {
+    margin-bottom: 10px;
+}
+
+.footer-column p,
+.footer-column a {
+    margin-bottom: 5px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column {
+    flex: 1 0 auto; 
+}
+#contactos h3{
+    text-align: center;
+}
+#redes{
+    text-align: center;
+}
+#legal{
+    text-align: center;
+}
+    .footer-column .contactos {
+        order: 1;
+    }
+    .footer-column .redes {
+        order: 2;
+    }
+    .footer-column .legal {
+        order: 3;
+    }
+    
+    .logo-container img{
+        max-width: 150px;
+        
+    }
+    
+}
+
+@media (min-width: 768px) {
+    footer {
+        position: static;
+       
+    }
+    .logo-container img{
+        max-width: 300px;
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+#contenedor-servicios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.801);
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 9999;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.titulo {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.fila-de-enlaces {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 30px;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%; 
+    box-sizing: border-box;
+    justify-content: flex-start; 
+}
+
+.columna a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    color: black;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#btnCerrarServicios {
+    position: absolute;
+    top: 5px; 
+    right: 5px; 
+    background: transparent;
+    border: none;
+    font-size: 16px; 
+    cursor: pointer;
+}
+
+
+.main-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #333;
+    width: 200px; 
+}
+
+.menu-btn {
+    display: block;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    z-index: 10;
+    color: white;
+}
+
+@media (min-width: 768px) { 
+   .main-nav {
+        display: flex;
+        position: static;
+        top: auto;
+        right: auto;
+        width: auto;
+        flex-direction: row;
+        background-color: transparent;
+    }
+
+   .menu-btn {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+#contenedor-servicioss {
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.801);
+    max-width: 100%; 
+    box-sizing: border-box; 
+    width: 100%; 
+}
+
+
+
+
+
+.menu-principal {
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: #000000;
+    overflow-y: auto; 
+    min-height: 300px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    width: 100%; 
+    font-size: 120%;
+}
+
+
+
+.menu-principal ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-principal ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+   
+    
+}
+
+#contenedor-servicioss a {
+    color: black; 
+    font-size: 70%;
+}
+
+
+#flecha {
+    float: right;
+    font-size: 50%;
+    margin-top: 2%;
+    
+}
+   .terms-conditions {
+        background-color: #ffffff; 
+        padding: 20px;
+        margin: 20px auto; 
+        max-width: 800px; 
+        text-align: justify; 
+    }
+
+   .terms-conditions h2 {
+        color: #333; 
+        text-align: center; 
+    }
+
+   .terms-conditions h3 {
+        color: #666; 
+        text-align: left; 
+    }
+
+   .terms-conditions p,
+   .terms-conditions li {
+        color: #333; 
+    }
+
+   .terms-conditions ul {
+        list-style-type: none; 
+        padding-left: 20px;
+    }
+
+   .terms-conditions ul li::before {
+        content: '•'; 
+        color: #333; 
+        display: inline-block; 
+        width: 1em;
+        margin-left: -1em;
+    }
+</style>
+
+<body bgcolor="white">
+    <header id="miCabecera">
+        <div class="logo-container">
+            <a href="index.html"><img src="logo.png" alt="Logo de Mi Empresa"></a>
+        </div>
+       
+        <button class="menu-btn">☰</button>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Sobre nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="content-main">
+        <div id="contenedor-servicios" style="display:none;">
+            <button type="button" id="btnCerrarServicios">&times;</button>
+            <div>
+                <h2 class="titulo">Servicios</h2>
+                <div class="fila-de-enlaces">
+                    <div class="columna">
+                        <a href="servicios.html#Fabricacion">Fabricación de piezas maquinada en torno</a>
+                        <a href="servicios.html#Retrabajos">Re trabajos</a>
+                        <a href="servicios.html#Ensambles">Ensambles</a>
+                        <a href="servicios.html#Moldes">Moldes</a>
+                        <a href="servicios.html#Fixtures">Fixtures</a>
+                    </div>
+                    <div class="columna">
+                        <a href="servicios.html#Diseñomecanico">Diseño mecánico</a>
+                        <a href="servicios.html#Automatizacion">Proyectos de automatización</a>
+                        <a href="servicios.html#Neumonica">Fabricación de equipos con neumónica</a>
+                        <a href="servicios.html#Herreria">Trabajos de herrería</a>
+                        <a href="servicios.html#Suministros">Proceso de producción suministros</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+<section class="terms-conditions">
+    <h2>Términos y Condiciones</h2>
+    <div class="service-description">
+        <h3>Descripción del Servicio:</h3>
+        <p>Ofrecemos una amplia gama de servicios especializados, incluyendo:</p>
+        <ul>
+            <li>Fabricación de piezas maquinadas en torno, fresadora y electroerosión de corte por hilo.</li>
+            <li>Rectificado plano, re trabajos y ensambles.</li>
+            <li>Diseño y fabricación de moldes, fixtures y equipos con neumática.</li>
+            <li>Proyectos de automatización y diseño mecánico.</li>
+            <li>Trabajos de herrería con diversos materiales como aluminio, acero, PTR, titanio, cobre y acero inoxidable.</li>
+            <li>Gestión de procesos de producción y suministros.</li>
+        </ul>
+    </div>
+    <div class="quotation-process">
+        <h3>Proceso de Cotización:</h3>
+        <p>Las solicitudes de cotización serán revisadas por un encargado y se responderán dentro de 1 o 2 días hábiles.</p>
+    </div>
+    <div class="data-privacy">
+        <h3>Privacidad de Datos:</h3>
+        <p>Nos comprometemos a proteger la privacidad de nuestros clientes. Los datos proporcionados no serán compartidos fuera de nuestra empresa bajo ninguna circunstancia.</p>
+    </div>
+    <div class="intellectual-property">
+        <h3>Derechos de Propiedad Intelectual:</h3>
+        <p>Nos reservamos todos los derechos sobre el contenido intelectual relacionado con los servicios ofrecidos.</p>
+    </div>
+    <div class="email-conduct">
+        <h3>Conducta del Correo Electrónico:</h3>
+        <p>Los correos electrónicos enviados deben mantener un tono profesional. No se aceptarán correos con contenido inapropiado, incluyendo pero no limitado a lenguaje ofensivo, groserías o términos peyorativos.</p>
+    </div>
+    <p>© Figueroa Zavala José Manuel 20/06/24</p>
+
+</section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div id="contactos" class="footer-column">
+                <h3>AFZA</h3>
+                <p><a href="mailto:Angel.figueroaza18@gmail.com"><i class="fas fa-envelope"></i> Angel.figueroaza18@gmail.com</a></p>
+                <p><i class="fab fa-whatsapp"></i> (631)-182-2291</p>
+                <p><i class="fab fa-whatsapp"></i> (631)-164-4994</p>
+                <p><i class="fab fa-whatsapp"></i> (631)-147-3119</p>
+               
+                <p><i class="fas fa-map-marker-alt"></i> Dirección: Prolongación Av. Álvaro Obregón #3117, Local 6. H. Nogales, Sonora</p>
+
+            </div>
+            <div id="redes" class="footer-column">
+                <h4>Redes Sociales</h4>
+                <a href="https://www.facebook.com/CIAMNogales/?locale=es_LA" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
+            </div>
+
+       
+            <div id="legal" class="footer-column">
+                <h4>Legal</h4>
+                <a href="terminos.html"><i><img src="terminos.gif" width="20px" height="auto"></i>Terminos Y Condiciones</a>
+            </div>
+        </div>
+    </footer>
+    
+
+    <div id="menuPrincipal" class="menu-principal">
+        <ul>
+            <li><a href="index.html"><b>Inicio</b></a></li>
+            <li><a href="nosotros.html"><b>Sobre nosotros</b></a></li>
+            <li><a href="servicios.html"><b>Servicios</b><i class="fas fa-chevron-down" id="flecha"></i></a>
+                <div id="contenedor-servicioss" style="display:none;">
+                    <div>
+                        <div class="fila-de-enlacess">
+                            <div>
+                                <a href="servicios.html#Fabricacion"><b>Fabricación de piezas maquinada en torno</b></a>
+                                <a href="servicios.html#Retrabajos"><b>Re trabajos</b></a>
+                                <a href="servicios.html#Ensambles"><b>Ensambles</b></a>
+                                <a href="servicios.html#Moldes"><b>Moldes</b></a>
+                                <a href="servicios.html#Fixtures"><b>Fixtures</b></a>
+                                <a href="servicios.html#Diseñomecanico"><b>Diseño mecánico</b></a>
+                                <a href="servicios.html#Automatizacion"><b>Proyectos de automatización</b></a>
+                                <a href="servicios.html#Neumonica"><b>Fabricación de equipos con neumónica</b></a>
+                                <a href="servicios.html#Herreria"><b>Trabajos de herrería</b></a>
+                                <a href="servicios.html#Suministros"><b>Proceso de producción suministros</b></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li><a href="contacto.html"><b>Contacto</b></a></li>
+        </ul>
+    </div>
+</body>
+</html>

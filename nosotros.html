@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=TU_CLAVE_API&callback=initMap" async defer></script>
+        <link rel="stylesheet" href="stylesnosotros.css">
+        <script src="script.js"></script> 
+        <title>Inicio</title>
+    </head>
+<body>
+    <header id="miCabecera">
+        <div class="logo-container">
+            <a href="index.html"><img src="logo.png" alt="Logo de Mi Empresa"></a>
+        </div>
+       
+        <button class="menu-btn">☰</button>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Sobre nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="about-us">
+        <div id="contenedor-servicios" style="display:none;">
+            <button type="button" id="btnCerrarServicios">&times;</button>
+            <div>
+                <h2 class="titulo">Servicios</h2>
+                <div class="fila-de-enlaces">
+                    <div class="columna">
+                        <a href="servicios.html#Fabricacion">Fabricación de piezas maquinada en torno</a>
+                        <a href="servicios.html#Retrabajos">Re trabajos</a>
+                        <a href="servicios.html#Ensambles">Ensambles</a>
+                        <a href="servicios.html#Moldes">Moldes</a>
+                        <a href="servicios.html#Fixtures">Fixtures</a>
+                    </div>
+                    <div class="columna">
+                        <a href="servicios.html#Diseñomecanico">Diseño mecánico</a>
+                        <a href="servicios.html#Automatizacion">Proyectos de automatización</a>
+                        <a href="servicios.html#Neumonica">Fabricación de equipos con neumónica</a>
+                        <a href="servicios.html#Herreria">Trabajos de herrería</a>
+                        <a href="servicios.html#Suministros">Proceso de producción suministros</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="content-block image-container uno-image">
+            <div class="info-column">
+                <h2>Quienes somos?</h2>
+                <p>Somos una empresa creada en el año 2017, dedicada al diseño y manufactura de maquinado CNC, buscando satisfacer las necesidades de nuestros clientes y cualquier industria en el mercado, Nos adaptamos a cualquier tipo de proyecto y mejora continua ayudando así a desarrollarlo cuidando la calidad y precisión en nuestros servicios y productos.</p>
+            </div>
+            <div class="image-column">
+                <img src="nosotros.png" alt="Equipo de trabajo">
+            </div>
+        </section>
+        <section class="content-block image-container dos-image">
+            <div class="image-column">
+                <img src="Mision.png" alt="Objetivo corporativo">
+            </div>
+            <div class="info-column">
+                <h2>Misión</h2>
+                <p>Somos una empresa de servicio industrial, dedicada a satisfacer necesidades de nuestros clientes al ofrecerles los mejores estándares de calidad, puntualidad y eficiencia en los trabajos que hacemos.</p>
+            </div>
+        </section>
+        <section class="content-block tres-image">
+            <div class="info-column">
+                <h2>Visión</h2>
+                <p>Tenemos la capacidad para lograr ser uno de los mejores en lo que hacemos en toda la región norte del estado de Sonora, evolucionando día a día para entregar los mejores resultados a nuestros clientes.</p>
+            </div>
+            <div class="image-column">
+                <img src="Vision.png" alt="Visión futura">
+            </div>
+        </section>
+        <section class="content-block seis-image">
+            <div class="image-column">
+                <img src="Valores.png" alt="Visión futura">
+            </div>
+            <div class="info-column">
+                <h2>Valores</h2>
+                <ul>
+                    <li>Integridad</li>
+                    <li>Honestidad</li>
+                    <li>Pasión</li>
+                    <li>Calidad</li>
+                    <li>Sinceridad</li>
+                    <li>Respeto</li>
+                </ul>
+            </div>
+        </section>
+        <section class="content-block cinco-image">
+            <div class="info-column">
+                <h2>Filosofía</h2>
+                <p>"Nuestra pasión, innovación, espíritu emprendedor, búsqueda constante de la excelencia y nuestro compromiso con la responsabilidad son los pilares fundamentales que nos impulsan a brindar siempre el mejor servicio y productos a nuestros clientes."</p>
+            </div>
+            <div class="image-column">
+                <img src="Filosofia.png" alt="Visión futura">
+            </div>
+        </section>
+        <section id="map" class="content-block cuatro-image">
+            <div class="info-column">
+                <h2>Nuestra Ubicación</h2>
+                <iframe class="mapa-responsive" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3409.9372000945036!2d-110.94339438887093!3d31.277832274218795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86d152fa5b2bb9c9%3A0xd30d834738c9ad48!2sAv.%20Alvaro%20Obregon%203117%2C%20San%20Carlos%20Primera%20Etapa%2C%2084066%20Heroica%20Nogales%2C%20Son.!5e0!3m2!1ses-419!2smx!4v1718771813047!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div id="contactos" class="footer-column">
+                <h3>AFZA</h3>
+                <p><a href="mailto:Angel.figueroaza18@gmail.com"><i class="fas fa-envelope"></i> Angel.figueroaza18@gmail.com</a></p>
+                <p><i class="fab fa-whatsapp"></i> (631)-182-2291</p>
+                <p><i class="fab fa-whatsapp"></i> (631)-164-4994</p>
+                <p><i class="fab fa-whatsapp"></i> (631)-147-3119</p>
+               
+                <p><i class="fas fa-map-marker-alt"></i> Prolongación Av. Álvaro Obregón #3117, Local 6. H. Nogales, Sonora</p>
+
+            </div>
+            <div id="redes" class="footer-column">
+                <h4>Redes Sociales</h4>
+                <a href="https://www.facebook.com/CIAMNogales/?locale=es_LA" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
+            </div>
+
+       
+            <div id="legal" class="footer-column">
+                <h4>Legal</h4>
+                <a href="terminos.html"><i><img src="terminos.gif" width="20px" height="auto"></i>Terminos Y Condiciones</a>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="menuPrincipal" class="menu-principal">
+        <ul>
+            <li><a href="index.html"><b>Inicio</b></a></li>
+            <li><a href="nosotros.html"><b>Sobre nosotros</b></a></li>
+            <li><a href="servicios.html"><b>Servicios</b><i class="fas fa-chevron-down" id="flecha"></i></a>
+                <div id="contenedor-servicioss" style="display:none;">
+                    <div>
+                        <div class="fila-de-enlacess">
+                            <div>
+                                <a href="servicios.html#Fabricacion"><b>Fabricación de piezas maquinada en torno</b></a>
+                                <a href="servicios.html#Retrabajos"><b>Re trabajos</b></a>
+                                <a href="servicios.html#Ensambles"><b>Ensambles</b></a>
+                                <a href="servicios.html#Moldes"><b>Moldes</b></a>
+                                <a href="servicios.html#Fixtures"><b>Fixtures</b></a>
+                                <a href="servicios.html#Diseñomecanico"><b>Diseño mecánico</b></a>
+                                <a href="servicios.html#Automatizacion"><b>Proyectos de automatización</b></a>
+                                <a href="servicios.html#Neumonica"><b>Fabricación de equipos con neumónica</b></a>
+                                <a href="servicios.html#Herreria"><b>Trabajos de herrería</b></a>
+                                <a href="servicios.html#Suministros"><b>Proceso de producción suministros</b></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li><a href="contacto.html"><b>Contacto</b></a></li>
+        </ul>
+    </div>
+</body>
+</html>
